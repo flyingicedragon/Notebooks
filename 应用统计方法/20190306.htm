@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="gbk">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正交表</title>
+    <link rel="stylesheet" type="text/css" href="../Notebooks.css">
+</head>
+<body>
+    <ol>
+        <li>分散带来的冒尖性</li>
+        <li>整齐可比性帮助寻找好条件的位置</li>
+        <li>完全搭配试验方案不可取</li>
+    </ol>
+    <h1>认识正交表</h1>
+    <p>规范的正交表，位级是单一的。</p>
+    <p>L<sub>9</sub>(3<sup>4</sup>)</p>
+    <p>L是正交表符号，9是行数，3是位级的个数，4是列数</p>
+    <p>行数是试验次数，列数是因素数，位级是每个因素的各种情况。</p>
+    <p>最小的正交表L<sub>4</sub>(2<sup>3</sup>)</p>
+    <table border="1">
+        <tr>
+            <th>列号</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+        </tr>
+        <tr>
+            <th>1</th>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <th>4</th>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+    </table>
+    <p>第一列是条件号</p>
+    <p>将正交表较大时，难以写出所有的组合方式。如下是方法公式</p>
+    <strong>L<sub>9</sub>(3<sup>4</sup>)</strong><br>
+    <img src="20190306-1.png" alt="lost img" height="200 px"><br>
+    <strong>L<sub>25</sub>(5<sup>6</sup>)</strong><br>
+    <img src="20190306-2.png" alt="lost img" height="500 px"><br>
+    <strong>L<sub>27</sub>(3<sup>13</sup>)</strong>
+    <table border="1">
+        <tr>
+            <th>1</th>
+            <td>L<sub>27</sub>(3<sup>13</sup>)</td>
+            <td>L<sub>27</sub>(3<sup>13</sup>)<sub>+0</sub></td>
+            <td>L<sub>27</sub>(3<sup>13</sup>)<sub>+0</sub></td>
+        </tr>
+        <tr>
+            <th>1</th>
+            <td>L<sub>27</sub>(3<sup>13</sup>)</td>
+            <td>L<sub>27</sub>(3<sup>13</sup>)<sub>+1</sub></td>
+            <td>L<sub>27</sub>(3<sup>13</sup>)<sub>+2</sub></td>
+        </tr>
+        <tr>
+            <th>1</th>
+            <td>L<sub>27</sub>(3<sup>13</sup>)</td>
+            <td>L<sub>27</sub>(3<sup>13</sup>)<sub>+2</sub></td>
+            <td>L<sub>27</sub>(3<sup>13</sup>)<sub>+4</sub></td>
+        </tr>
+    </table>
+    <h1>混合位级的正交表</h1>
+    <p>L<sub>8</sub>(4<sup>1</sup>&times;2<sup>4</sup>)</p>
+    <p>L<sub>18</sub>(6<sup>1</sup>&times;2<sup>6</sup>)</p>
+    <p>L<sub>81</sub>(2<sup>1</sup>&times;2<sup>7</sup>)</p>
+    <h1>强力推荐使用带有中心的正交表。</h1>
+    <p>以每个因素都是3个位级为例，带有中心的正交表是指出现过全是2的组合。</p>
+    <strong>L<sub>9</sub>(3<sup>3</sup>)</strong>
+    <table border="1">
+        <tr>
+            <th>1</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+        </tr>
+        <tr>
+            <th>1</th>
+            <td>2中</td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <td>1左</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td>3右</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td colspan="4">一直到9……</td>
+        </tr>
+    </table>
+    <p>三列的123分别是左右中、前中后、上中下。将所有的试验点标注在一个立方体上，可以发现在所有27条线上试验点均衡分布，分散性好。所以强力推荐带有中心的正交表。</p>
+    <h1>案例分析</h1>
+    <h2>名称：晶体退火工艺改进</h2>
+    <ol>
+        <li>
+            <p>实验目的：检查癌细胞用到一种碘化钠晶体&Phi;，要求应力&le;2度。</p>
+            <p>在原工艺下，通过正交法寻使应力达到的工艺条件考核指标应力。</p>
+        </li>
+        <li>
+            <p>挑因素选位级，制定因素位级表。</p>
+            <p>A. 升温速度 30℃/h 50℃/h 100℃/h</p>
+            <p>B. 恒温温度 600℃ ……</p>
+            <p>……</p>
+            <table border="1">
+                <caption>因素位级表</caption>
+                <tr>
+                    <th>因素</th>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>D</th>
+                </tr>
+                <tr>
+                    <th>位级</th>
+                    <th>升温速度</th>
+                    <th>恒温温度</th>
+                    <th>恒温时间</th>
+                    <th>降温方式</th>
+                </tr>
+                <tr><th>位1</th></tr>
+                <tr><th>位2</th></tr>
+                <tr><th>位3</th></tr>
+            </table>
+        </li>
+        <li>
+            <p>利用正交表安排试验方案</p>
+            <p>因素顺序上列，位级对号入座，列出实验条件。（带有中心的正交表，第一行全是第二种情况或者说中间那种情况。不是一定要在第一行，可以在其他行，放在第一行方便设计。中间那种情况是指100、200、300中的那个200。）</p>
+        </li>
+    </ol>
+</body>
+</html>
