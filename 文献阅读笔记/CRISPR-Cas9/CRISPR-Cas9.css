@@ -1,0 +1,39 @@
+.title,.content{
+    text-align: justify;
+    width: 48%;
+}
+.title{
+    position: relative;
+    left: 2px;
+    border-right-style: solid;
+    border-right-color: greenyellow;
+}
+.content{
+    position: relative;
+    left: 5px;
+}
+.part{
+    display: flex;
+    border-style: solid;
+    border-color: greenyellow;
+    border-bottom: 0px;
+    position: relative;
+    left: 5%;
+    width: 90%;
+}
+#saka-gui-root{
+    display: none;
+}
+img{
+    width: 500px;
+}
+#last{
+    border-bottom: 3px solid greenyellow;
+}
+.footnote{
+    font-size: 14px;
+    font-family: STKaiti;
+    margin: 0px;
+    position: relative;
+    left: 7px;
+}
