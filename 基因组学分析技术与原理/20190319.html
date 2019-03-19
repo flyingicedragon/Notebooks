@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Notebooks.css">
+</head>
+<body>
+    <h3>逐步克隆法过程</h3>
+    <ol>
+        <li>构建遗传图谱</li>
+        <li>将种子BACs文库和标记锚定</li>
+        <li>识别扩展BACs</li>
+        <li>重复延伸覆盖全长</li>
+    </ol>
+    <h4>确定BACs和标记的对应关系</h4>
+    <strong>BAC Pooling Protocal</strong>
+    <ol>
+        <li>将每八组的BAC混合到一个板中，组成superpool，用PCR鉴定标记，确定在哪一个superpool（人类共48*8）；</li>
+        <li>将每一个superpool的每一行混合在一起，组成row pools，PCR鉴定确定在哪一行；同理，每一列混合在一起组成column pools，确定在那一列；每一板混合在一起，确定在哪一板。最终确定哪一个BAC与标记对应。</li>
+    </ol>
+    <strong>结果不一定只有一个阳性，需要判断阳性是否为真阳性</strong>
+    <ol>
+        <li>根据条带大小判断；</li>
+        <li>不能有多带发生（非特异性扩增）；</li>
+        <li>亮度最高的几个条带。</li>
+    </ol>
+    <p>最后一轮：菌p</p>
+    <p>取菌的时候，从冰箱里拿出来之后，用牙签伸入冰中，沾一下即可。</p>
+    <h4>延伸克隆的筛选</h4>
+    <p>STS的密度尚未达到绘制高精度物理图谱的要求，且在基因组中的分布不均匀，造成很多区域没有阳性克隆覆盖，形成空洞。因此需用指纹图谱（FPC法）或末端序列（Walking by End Sequence）步移等手段对种子克隆进行延伸，形成连续克隆群。利用延伸方法筛选得到的克隆称为延伸克隆。</p>
+    <img src="20190319-1.png" alt="">
+    <h5>指纹图谱法</h5>
+    <img src="20190319-2.png" alt="">
+    <h5>末端序列步行法</h5>
+    <h4>Clone Identification</h4>
+    <ol>
+        <li>STS-PCR</li>
+        <li>BAC end sequencing</li>
+        <li>Fingerprinting</li>
+        <li>FISH</li>
+    </ol>
+    <h3>霰弹法测序组装与Finishing</h3>
+    <h4>BAC文库组装流程</h4>
+    <img src="20190319-3.png" alt="">
+    <h4>霰弹法流程</h4>
+    <ol>
+        <li>Bac Clone: 100-200 kb物理打断→Sheared DNA: 1.0-2.0 kb</li>
+        <li>Sequencing Templates</li>
+        <li>随机读取</li>
+        <li>装配</li>
+        <li>用PCR或其他方法补充空缺处</li>
+    </ol>
+</body>
+</html>
