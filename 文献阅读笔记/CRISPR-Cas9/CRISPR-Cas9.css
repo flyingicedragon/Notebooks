@@ -1,25 +1,27 @@
 .title,.content{
     text-align: justify;
     width: 48%;
+    float: left;
 }
 .title{
     position: relative;
     left: 2px;
-    border-right-style: solid;
-    border-right-color: greenyellow;
 }
 .content{
     position: relative;
     left: 5px;
+    border-left: solid greenyellow;
+    margin: 0px 15px;
+    padding-left: 10px;
 }
 .part{
-    display: flex;
     border-style: solid;
     border-color: greenyellow;
     border-bottom: 0px;
     position: relative;
     left: 5%;
     width: 90%;
+    overflow: hidden;
 }
 #saka-gui-root{
     display: none;
