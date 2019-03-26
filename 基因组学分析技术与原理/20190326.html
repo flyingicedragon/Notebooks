@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="../Notebooks.css">
+	<title>常泽乾</title>
+</head>
+<body>
+	<h4>全基因组霰弹法</h4>
+	<h3>测序平台的构成</h3>
+	<dl>
+		<dt>文库组</dt>
+		<dd>
+			<ul>
+				<li>
+					各种物种DNA的提取
+					<p>尽量从同一个个体取样减少差异。物种、可能的污染。</p>
+				</li>
+				<li>载体的制备（酶量和时间的优化）</li>
+				<li>大片段文库的构建</li>
+				<li>
+					霰弹法文库的构建
+					<ol>
+						<li>
+							超声：打断基因组DNA，电泳检测超声效果（可以手动用注射器抽吸打断）
+						</li>
+						<li>
+							纯化、末端补平：片段化的DNA纯化，并用T4 DNA聚合酶补平末端
+						</li>
+						<li>
+							电泳：1%琼脂糖凝胶电泳，切下含1.6-2.0 kb、2.0-2.5 kb及2.5-3.0 kb的DNA片段的凝胶
+						</li>
+						<li>
+							回收：用QIAEXII GEL Extraction Kit 回收试剂盒从胶中回收DNA片段
+						</li>
+						<li>
+							连接：用T4 DNA连接酶连接DNA片段和用SmaI酶切后的pUC18载体
+						</li>
+						<li>
+							电转化：连接产物用细胞导入仪电转化入感受态大肠杆菌
+						</li>
+						<li>
+							涂平板、重组子筛选：培养18小时候观察蓝白斑，白斑为重组克隆
+						</li>
+					</ol>
+				</li>
+				<li>文库质量的检测</li>
+				<li>转化</li>
+				<li>文库的保存</li>
+			</ul>
+			<table>
+				<tr>
+					<td rowspan="2">项目</td>
+					<td colspan="2">两种文库</td>
+				</tr>
+				<tr>
+					<td>BAC文库</td>
+					<td>霰弹法文库</td>
+				</tr>
+				<tr>
+					<td>文库的直接用途</td>
+					<td>大片段DNA在基因组上定位</td>
+					<td>测序</td>
+				</tr>
+				<tr>
+					<td>基因组片段化方法</td>
+					<td>NotI / SacI不完全消化酶切</td>
+					<td>超声波打断</td>
+				</tr>
+				<tr>
+					<td>插入的DNA片段长度</td>
+					<td>大    100～300 Kb</td>
+					<td>小    2～3 Kb</td>
+				</tr>
+				<tr>
+					<td>载体</td>
+					<td>细菌人工载体 Bac</td>
+					<td>质粒载体 pUC18</td>
+				</tr>
+			</table>
+		</dd>
+		<dt>培养组</dt>
+		<dd>将结果放置三五分钟，沉到底部的都是死菌，即摇老了。死菌过多会影响体系的成分；死菌降解会释放大量RNA。甩一下在强光下观察，发现有絮状物最好，处于前对数期。<br>挑单克隆可以不用枪头用牙签，竹皮牙签好，需要湿润。</dd>
+		<dd>模板组</dd>
+		<dt>提质粒的加solutionⅡ裂解时，如果加完还需要涡旋才能透明，说明菌过多或solutionⅡ少。solutionⅢ注意有没有抱团现象，有则说明不好。收集滤液时，建议使用负压方式而非离心，相对温和。需要胶回收和量化的电泳都是制备性电泳，需要注意根据分辨大小不同决定电泳介质；在符合要求的情况下胶尽量稀；胶不要太厚（体系较大时，增加孔数而非胶的厚度）；不能先染而是应该后染（电泳结束后，切下并只染marker 5到10分钟，根据marker列切胶）；泳道要够长；一般用0.5*TBE。</dt>
+	</dl>
+</body>
+</html>
