@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../Notebooks.css">
+	<title>常泽乾</title>
+</head>
+<body>
+	<h1>下一代测序技术</h1>
+	<ul>
+		<li>罗氏的454——测序长度较长，倾向于新物种，但是通量小、成本高；</li>
+		<li>illumina的Solexa——中间状况，占据了目前的主流；</li>
+		<li>SOLiD——通量高，测序长度较短，重测序（“已知基因组”）。</li>
+	</ul>
+	<p>小型机器</p>
+	<h1>测序技术</h1>
+	<table>
+		<tr>
+			<td>测序技术</td>
+			<td>长度</td>
+			<td>精度</td>
+			<td>时耗</td>
+			<td>花费</td>
+		</tr>
+		<tr>
+			<td>一代</td>
+			<td>长（~1kb）</td>
+			<td>高（99.99%）</td>
+			<td>长</td>
+			<td>高</td>
+		</tr>
+		<tr>
+			<td>二代Illumina</td>
+			<td>短（30~300bp）</td>
+			<td>高（99.9%）</td>
+			<td>短（1~11天/run）</td>
+			<td>低（330~650￥/gb）</td>
+		</tr>
+		<tr>
+			<td>三代（PacBio）</td>
+			<td>长（10~15kb）</td>
+			<td>低（87%）</td>
+			<td>短（&le;4h/run）</td>
+			<td>高（5000~10000￥/gb）</td>
+		</tr>
+	</table>
+	<h1>基因组从头测序的三个阶段</h1>
+	<dl>
+		<dt>Genome Survey阶段</dt>
+		<dd>基因组大小</dd>
+		<dd>杂合度高低、样品污染</dd>
+		<dd>GC含量评估</dd>
+		<dd>重复序列分裂</dd>
+		<dt>基因组框架图阶段</dt>
+		<dd>基因组/转录组等测序数据累积</dd>
+		<dd>基因组拼接及验证</dd>
+		<dd>基因组基本组成（GC含量、重复序列等）</dd>
+		<dd>基因预测和功能注释等</dd>
+		<dd>进化分析（基因组内和物种间）</dd>
+		<dt>基因组精细图阶段</dt>
+		<dd>大片段文库（BAC/Fosmid）</dd>
+		<dd>物理图谱（BioNano/OpGen）</dd>
+		<dd>遗传图谱（GBS）</dd>
+		<dd>染色体定位（FISH）</dd>
+	</dl>
+	<h1>名词解释</h1>
+	<p>Reads 覆盖样品目标基因组的所有克隆</p>
+	<p>Pair-end reads 从两端开始测序</p>
+	<p>Mate-pair reads 两端加测序接头后再加粘性接头环化并正好可以产生一个外切酶位点。不同程度酶切后再添加测序接头测序（片段过长后自身环化困难）(可以用来辅助填补两个contig之间洞）</p>
+	<p>Insert size</p>
+	<p>Contig</p>
+	<p>Scaffold</p>
+	<p>N50 size</p>
+	<h1>技术路线</h1>
+	<img src="20190402-1.png" alt="">
+	<p>不仅仅有转录组数据，也可以有代谢组等其他数据。转录组数据用得较多。</p>
+	<img src="20190402-2.png" alt="">
+</body>
+</html>
