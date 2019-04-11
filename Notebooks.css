@@ -13,3 +13,7 @@ table{
 td{
     text-align: center;
 }
+p.footnote{
+    color: gray;
+    font-size: 14px;
+}
