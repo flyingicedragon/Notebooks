@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../Notebooks.css">
+	<title>20190423</title>
+</head>
+<body>
+	<h1>测序</h1>
+	<h2>植物基因组测度难点</h2>
+	<ul>
+		<li>Gene family</li>
+		<li>Tandem duplication</li>
+		<li>
+			Cluster located repeat
+			<p class="footnote">相比于动物，重复序列聚集在一起，更难以拼接（需要更长的读码）</p>
+		</li>
+		<li>
+			High repeat content
+			<p class="footnote">比动物重复序列多</p>
+		</li>
+		<li>Large genome size</li>
+		<li>High heterozygosity</li>
+		<li>Recent whole genome duplication</li>
+		<li>Polyploid</li>
+	</ul>
+	<h2>Gonome Survey 流程</h2>
+	<ul>
+		<li>数据</li>
+		<li>质控</li>
+		<li>分析</li>
+	</ul>
+	<h3>基因组大小评估（20分）</h3>
+	<ul>
+		<li>Flow cytometric analysis （流式）</li>
+		<li>K-mer distribution （K-mer分布）</li>
+	</ul>
+	<h3>杂合和重复</h3>
+	<p>杂合峰正好位于主峰的1/2处。</p>
+	<p>比主峰更大的位置代表拷贝数大于1。</p>
+	<h4>杂合度评估——</h4>
+	<p>小于主峰1/2处的低峰是外源DNA污染。有时是实验污染，有时是内共生的细菌、真菌或者微小昆虫体表面无法去除的杂菌（总之就是去不掉）等。</p>
+	<p class="footnote">将共生的细菌等测序得出，和全部测序结果进行mapping。根据mapping结果进行分析。</p>
+	<p class="footnote">可以根据杂质和目标生物的基因组情况可以分析互作。</p>
+	<p class="footnote">去除之后可以重新进行K-mer来判断杂质是否完全过滤干净。有时候会发现低峰降低，但是没去干净。此时只能带着杂质继续组装。然后在去除（方法没记上），然后第三次K-mer。</p>
+	<p>有时会出现无峰现象，如果不是污染或者实验问题，则说明测序数据不足。</p>
+	<h2>文库</h2>
+	<ul>
+		<li>Pair-end 一般只有小于150bp才会单端测序。</li>
+		<li>Mate-pair</li>
+	</ul>
+	<h3>质量控制</h3>
+</body>
+</html>
