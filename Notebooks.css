@@ -17,3 +17,13 @@ p.footnote{
     color: gray;
     font-size: 14px;
 }
+hr.up{
+    height:10px;
+    border:none;
+    border-top:10px groove skyblue;
+}
+hr.down{
+    height:10px;
+    border:none;
+    border-top:10px ridge skyblue;
+}
