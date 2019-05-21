@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="../Notebooks.css">
@@ -44,6 +44,14 @@
 			<td>高（5000~10000￥/gb）</td>
 		</tr>
 	</table>
+	<h1>名词解释</h1>
+	<p><strong>Reads</strong> 覆盖样品目标基因组的所有克隆</p>
+	<p><strong>Pair-end reads</strong> 从两端开始测序</p>
+	<p><strong>Mate-pair reads</strong> 两端加测序接头后再加粘性接头环化并正好可以产生一个外切酶位点。不同程度酶切后再添加测序接头测序（片段过长后自身环化困难）(可以用来辅助填补两个contig之间洞）</p>
+	<p><strong>Insert size</strong> The size of the clone-insert from which a clone-end pair is taken.</p>
+	<p><strong>Contig</strong> The result of joining an overlapping collection of sequence reads.</p>
+	<p><strong>Scaffold</strong> The result of connecting non-overlapping contigs by using pair-end reads.</p>
+	<p><strong>N50 size</strong> As applied to contigs or scaffolds, that size above which 50% of the assembled sequence can be found.</p>
 	<h1>基因组从头测序的三个阶段</h1>
 	<dl>
 		<dt>Genome Survey阶段</dt>
@@ -63,17 +71,9 @@
 		<dd>遗传图谱（GBS）</dd>
 		<dd>染色体定位（FISH）</dd>
 	</dl>
-	<h1>名词解释</h1>
-	<p>Reads 覆盖样品目标基因组的所有克隆</p>
-	<p>Pair-end reads 从两端开始测序</p>
-	<p>Mate-pair reads 两端加测序接头后再加粘性接头环化并正好可以产生一个外切酶位点。不同程度酶切后再添加测序接头测序（片段过长后自身环化困难）(可以用来辅助填补两个contig之间洞）</p>
-	<p>Insert size</p>
-	<p>Contig</p>
-	<p>Scaffold</p>
-	<p>N50 size</p>
 	<h1>技术路线</h1>
-	<img src="20190402-1.png" alt="">
+	<img src="20190402-1.png" height="400px">
 	<p>不仅仅有转录组数据，也可以有代谢组等其他数据。转录组数据用得较多。</p>
-	<img src="20190402-2.png" alt="">
+	<img src="20190402-2.png" height="600px">
 </body>
 </html>

@@ -1,8 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
+
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="../Notebooks.css">
+	<style>
+		pre{
+			font-size: 13px;
+			word-wrap: normal;
+			word-break: break-all;
+			white-space: pre;
+			overflow: auto;
+			display: block;
+			color: #abb2bf;
+			background: #282c34;
+			margin: 0 0 10px;
+			line-height: 1.42857;
+			border: 1px solid #ccc;
+			font-family: Menlo,Monaco,Consolas,Courier New,monospace;
+		}
+	</style>
 	<title>20190423</title>
 </head>
 <body>
@@ -25,17 +42,62 @@
 		<li>Polyploid</li>
 	</ul>
 	<h2>Gonome Survey 流程</h2>
-	<ul>
-		<li>数据</li>
-		<li>质控</li>
-		<li>分析</li>
-	</ul>
+	<dl>
+		<dt>数据：</dt>
+		<dd>20X以上短读长Pair-end序列</dd>
+		<dt>质控：</dt>
+		<dd>FastQC</dd>
+		<dt>分析：</dt>
+		<dd>JELLYFISH</dd>
+	</dl>
 	<h3>基因组大小评估（20分）</h3>
 	<ul>
 		<li>Flow cytometric analysis （流式）</li>
 		<li>K-mer distribution （K-mer分布）</li>
 	</ul>
-	<h3>杂合和重复</h3>
+	<hr class="up">
+	<em>以下内容来自于百度到的简书</em>
+	<p><strong>关键词：</strong>Genome Size Estimation; Kmer</p>
+	<h1>一.Kmer评估法简介</h1>
+	<p>
+		假如有一批二代或三代基因组测序数据，计算基因组覆盖深度：<br>
+		<strong>base_coverage_depth</strong> = Total_base_num/genome_size=(read_num * read_length)/genome_size<br>
+		同样，Kmer覆盖深度，即Kmer频率曲线中的峰值，可计算：<br>
+		<strong>Kmer_coverage_depth</strong>= Total_kmer_num/genome_size = read_num * (read_length - kmer_size +
+		1)/genome_size<br>
+		基因组覆盖深度和Kmer深度的关系：<br>
+		<strong>Kmer_coverage_depth</strong> = base_coverage_depth * (read_length - Kmer_size + 1)/read_length<br>
+		如果基因组深度为50X，read_length = 100,Kmer_size = 21,则Kmer深度：<br>
+		<strong>Kmer_coverage_depth</strong> = 50 * （100 -21 + 1）/100，刚好是Kmer分布图中的peak。
+	</p>
+	<p><strong>kmer峰值图可以看到基因组覆盖度</strong></p>
+	<img src="20190423-1.png" width="477" height="443" 				format="image/png" filesize="14759">
+	<p><strong>多态性（polymorphism）</strong>：由于多倍体物种的杂合性，即同源染色体上的相同位置的碱基差异，SNV等，同导致Kmer分布图出现亚峰（sub-peak）。如果主峰是50，多态性导致Kmer频率减半，亚峰则会在100左右。</p>
+	<img src="20190423-2.png" width="242" height="208" format="image/png" filesize="32191">
+	<h1>二.软件评估</h1>
+	<h2>1.jellyfish</h2>
+	<pre><code>#对Kmer计数，使用fastq/fasta文件均可
+# -s是预估哈希表的大小，即G+G*c*e*k。G是Genome Size；c是coverage；e是测序错误率（illumina为1%）；k是kmer大小
+# 输入只能的未压缩的文件，如若输入压缩文件，会报错：terminate called after throwing an instance of 'std::runtime_error'
+$ jellyfish count -m 16 -s 100M -t 24 -o mer_counts -c 7 input.fastq
+$ jellyfish histo -f mer_counts &gt;mer_counts.histo</code></pre>
+	<pre><code>$ jellyplot.pl mer_counts.histo
+# use find_valleys.pl to help pinpoint the actual peak
+find_valleys.pl mer_counts.histo
+# estimate the size and coverage
+estimate_genome_size.pl --kmer=31 --peak=42 --fastq=reads1.fastq.gz reads2.fastq.gz</code></pre>
+	<h2>2.KmerFreq_AR（SOAPdenovo2工具包）</h2>
+	<pre><code># 用90G和全部数据测试
+$ KmerFreq_AR -k 17 -t 8 -q 33 -p soapec_90g -b 90000000000 reads.list &gt;KmerFreq_90g.log 2&gt;KmerFreq_90g.error
+$ KmerFreq_AR -k 17 -t 8 -q 33 -p soapec_all reads.list &gt;KmerFreq_all.log 2&gt;KmerFreq_all.error
+# 评估结果在soapec_90g.genome_estimate，soapec_all.genome_estimate文件中</code></pre>
+	<h2>3.kmergenie</h2>
+	<p>可通过设置kmer最小值（-l），最大值(-k)及间隔kmer大小（-s）去设置多个kmer，结果可生成多个kmer评估频谱及可视化pdf文件</p>
+	<pre><code>$ kmergenie reads.list --diploid -k 121 -l 19 -s 6 -o histograms.hiseq &gt;histograms.hiseq.log 2&gt;histograms.hiseq.err</code></pre>
+	<p>我这段代码测试了Kmer 19之121，但是结果是19还准，25还行，之后的都不靠谱了。随着Kmer值增大，峰值会左移，再逐渐没有峰值。kmer还是17-25之间更靠谱。</p>
+	<h3>4.ALLPATHSLG</h3>
+	<hr class="down">
+	<h3>基因组拼接两大挑战:杂合和重复</h3>
 	<p>杂合峰正好位于主峰的1/2处。</p>
 	<p>比主峰更大的位置代表拷贝数大于1。</p>
 	<h4>杂合度评估——</h4>
