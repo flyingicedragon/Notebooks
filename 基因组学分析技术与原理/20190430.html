@@ -12,9 +12,21 @@
 	<p>（无参考基因组序列）相对复杂，计算量大，依据测序长度不同，主要分为两种算法。</p>
 	<ul>
 		<li>
-			<p>Overlap-Layout-Consensus</p>
+			<strong>Overlap-Layout-Consensus</strong>
+			<p>测序 reads 较长，测序通量不高的一、三代平台。常用组装工具有 Edena、Celera和Phrap等。</p>
 		</li>
-		<li>de bruijn算法（K-mer法）</li>
+		<li>
+			<strong>de bruijn算法（K-mer法）</strong>
+			<p>测序 reads 短，测序通量高的二代平台。</p>
+		</li>
 	</ul>
+	<h3>基因组杂合度对组装的影响</h3>
+	<p>一般杂合度越高，测序reads越短。</p>
+	<h3>植物基因组拼装路线建议</h3>
+	<img src="20190430-1.png" height="300px">
+	<h3>植物基因组组装的改进策略</h3>
+	<p class="footnote">尽量避免使用短reads和mate pair文库</p>
+	<img src="20190430-2.png" height="200px">
+	<h3>Fosmid/BAC pooling strategy改进组装</h3>
 </body>
 </html>

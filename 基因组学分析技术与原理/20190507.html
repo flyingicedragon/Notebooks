@@ -11,8 +11,54 @@
 		<li>拼接长度：N50/N90</li>
 		<li>拼接正确性：BAC、Fosmid</li>
 		<li>基因组覆盖度：reads、拼接饱和曲线</li>
-		<li>……</li>
+		<li>基因区完整性：EST/cDNA、RNA_seq</li>
+		<li>保守基因覆盖度：CEGMA(Core Eukaryotic Genes Mapping Approach)<br>BUSCO(Benchmarking Universal Single-copy Orthologs)</li>
 	</ol>
-	<h1>基因家族进化分析及比较生物学分析技术路线</h1>
+	<h1>重复序列注释流程</h1>
+	<img src="20190507-1.png" height="250px">
+	<p>基于序列同源比对法：Repeatmasker</p>
+	<p>从头预测法： RepeatModer、Repeatscout、Piler</p>
+	<p>LTR预测：LTR harvest 、LTR-finder</p>
+	<p>TE预测：TEclass</p>
+	<h1>基因结构及功能注释技术路线</h1>
+	<img src="20190507-2.png" height="400px">
+	<h1>基因组ncRNA注释</h1>
+	<p>常规ncRNA：</p>
+	<ul>
+		<li>Rfam（http://rfam.xfam.org/，rfam_scan.pl ） </li>
+		<li>tRNA （tRNAscan-SE）</li>
+		<li>snoScan  识别带 C/D 盒的 snoRNAs</li>
+		<li>SnoGps   识别带 H/ACA 盒的 snoRNAs</li>
+		<li>miRNA （http://www.mirbase.org/，mirScan）</li>
+		<li>rRNA   同源比对</li>
+	</ul>
+	<h1>大片段扩增与基因重复</h1>
+	<ul>
+		<li>重组</li>
+		<li>复制滑移</li>
+		<li>反转座</li>
+		<li>非整倍扩增</li>
+		<li>全基因组倍增</li>
+	</ul>
+	<h1>编码蛋白预测与功能注释</h1>
+	<img src="20190507-3.png" height="300px">
+	<h1>基因注释</h1>
+	<img src="20190507-4.png" height="400px">
+	<h1>MEROPS  - 蛋白酶、蛋白酶作用基质及抑制因子信息的整合资源数据库</h1>
+	<big>
+		<pre>层级分类：蛋白组分（protein species）、家族（family）、氏族（clan）
+	
+数据库根据催化类型的不同将蛋白酶分为 9 大类：
+1）天冬氨酸类（Aspartic，A）
+2）半胱氨酸类（Cysteine，C）
+3）谷氨酸类（Glutamic，G）
+4）金属类（Metallo，M)
+5）天冬酰胺类（Asparagine，N）
+6）混合类（Mixed，P）
+7）丝氨酸类（Serine S）
+8）苏氨酸类（Threonine T）
+9）未知催化类型的未知类（Unknown U）</pre>
+		<h1>基因家族进化分析及比较生物学分析技术路线</h1>
+	</big>
 </body>
 </html>
