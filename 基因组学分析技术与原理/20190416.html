@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
 	<meta charset="UTF-8">
 	<title>方向东</title>
@@ -7,6 +7,129 @@
 </head>
 <body>
 	<h1>表观遗传学原理、技术与应用——高通量表观组学技术与应用</h1>
-	<p>课程主要讲述了测序在表观遗传学方面的应用，没什么用，所以没有记录。</p>
+	<h2>DNase-Seq</h2>
+	<strong>研究内容——DNase Ⅰ 高敏感位点</strong>
+	<h3>红细胞与珠蛋白</h3>
+	<p>红细胞是哺乳动物血液中数量最多的细胞，具有重要的生理功能</p>
+	<p>血红蛋白在红细胞中特异表达，由各2条-和-珠蛋白组成</p>
+	<p>珠蛋白属于多基因家族，家族成员高度同源，在不同发育阶段顺序表达，是研究真核基因转录调控和基因治疗的理想模型 </p>
+	<h4>珠蛋白异常导致遗传性血液病</h4>
+	<h5>镰刀状红细胞贫血</h5>
+	<p>遗传性贫血症，属隐性遗传。患者β珠蛋白第六个氨基酸残基由正常的谷氨酸(Glu)突变为缬氨酸(Val)，导致血红蛋白结构异常，丧失输氧功能</p>
+	<p>患者的红细胞由于缺氧变成镰刀形，并因此破裂，造成严重贫血，甚至引起死亡</p>
+	<h5>地中海贫血</h5>
+	<p>是临床常见的血液系统疾病，主要分α和β地贫两种。发病原因是由于血液红细胞中组成血红蛋白分子的珠蛋白肽链结构异常或合成速率异常，造成肽链不平衡，而产生以溶血性贫血为主的症状群</p>
+	<p>我国重型和中间型地贫患者30万人，地贫基因携带者超过3000万人，涉及近1亿人口，主要集中在长江以南的福建、江西、湖南、广东、广西、海南、重庆、四川、贵州、云南等地，尤以两广地区最为严重，广东地贫基因携带者超过10%，广西“地贫”基因携带者超过20%</p>
+	<h6>位点控制区（Locus Control Region, LCR）</h6>
+	<ul>
+		<li>A group of DNase I hypersensitive sites (HSs).</li>
+		<li>Discovered in the β-globin locus; subsequently detected in several other loci.</li>
+		<li>Confers lineage specific gene expression.</li>
+		<li>Act as a major enhancer.</li>
+		<li>Insulates a locus from surrounding inactive chromatin.</li>
+		<li>Opens chromatin at ectopic sites.</li>
+		<li>Modulates histone modifications for distal genes.</li>
+		<li>Regulates DNA methylation.</li>
+		<li>Controls DNA replication timing.</li>
+	</ul>
+	<h3>DNase Ⅰ 图谱技术</h3>
+	<ul>
+		<li>
+			<h4>传统：Southern blot</h4>
+			<ul>
+				<li>细胞核抽提</li>
+				<li>核酸酶笑话</li>
+				<li>DNA富集</li>
+				<li>DNA鉴定</li>
+			</ul>
+			<p>以红细胞分化的转录调控为例。（ppt 39/130）</p>
+		</li>
+		<li>
+			<h4>高通量：</h4>
+			<ul>
+				<li>ChIP</li>
+				<li>Next-generation sequencing</li>
+			</ul>
+			<p>以干细胞血液分化发育的系统组学研究为例</p>
+		</li>
+	</ul>
+	<h3>转录因子与DNA的结合实验</h3>
+	<ul>
+		<li>In vitro：电泳迁移率变动分析 (EMSA)</li>
+		<li>In vivo：染色质免疫沉淀 (ChIP) </li>
+	</ul>
+	<strong>核小体的位置</strong>
+	<p>MNaes图谱</p>
+	<h2>3C-Seq</h2>
+	<strong>染色质高级结构</strong>
+	<h3>真核基因的转录调控</h3>
+	<p>染色质的空间构想</p>
+	<p>荧光原位杂交技术，FISH</p>
+	<p><strong>3C</strong> 染色质构想捕获技术</p>
+	<strong>基因组印记</strong>
+	<h2>ChIP-Seq</h2>
+	<ul>
+		<li>
+			<h3>转录因子：</h3>
+			<p>Pol II、TBP、TFIIB、CTCF…</p>
+			<h4>转录因子的分类</h4>
+			<p>绝大多数转录因子可以根据它们的DNA结合域加以分类，如AP2/EREBP转录因子专一地结合GCC-box，MYB转录因子专一地结合MYB域，WRKY转录因子专一地结合W-box等。</p>
+			<ul>
+				<li>基本转录因子：TFIID、A、B、F、E、H、 Pol II…</li>
+				<li>组织特异性转录因子：GATA、EKLF、Bcl 11A…</li>
+				<li>其它：CTCF、USF、Actin、FOG…</li>
+			</ul>
+		</li>
+		<li>
+			<h3>组蛋白：</h3>
+			<ul>
+				<li>未修饰：H3、H4、H2A、H2B、H1</li>
+				<li>有修饰：acH3、acH4、meH3K4、meH3K9…</li>
+				<li>变异体：H3.3、H2A.Z…</li>
+			</ul>
+		</li>
+	</ul>
+	<h2>整合多组学数据解析基因表达调控机制</h2>
+	<strong>基因表达的多维调控</strong>
+	<p>基因表达受到碱基水平、核酸分子水平、蛋白质水平等多维调控。疏松状态染色质中的DHS可以富集转录因子和重要酶类。染色质的开放程度与DHS的CpG岛甲基化及组蛋白修饰密切相关。转录因子通过结合DNA序列特定位点来改变启动子活性，进而增强或抑制基因表达。染色质通过“成环”机制使得远距离的调控序列实现转录调控。SNPs通过改变基因的转录区、DHSs或调控区的DNA序列来改变转录因子的结合状态从而影响基因表达。</p>
+	<hr class="up">
+	<h1>问题个人思考</h1>
+	<ol>
+		<li>
+			<h2>表观遗传学的主要研究内容有哪些？</h2>
+			<ul>
+				<li>RNA的编码等</li>
+				<li>CpG Code</li>
+				<li>组蛋白编码</li>
+				<li>核小体编码</li>
+				<li>DNase Ⅰ 高灵敏位点</li>
+				<li>转录因子的结合和相互作用</li>
+				<li>调控元件的分布和共定位</li>
+				<li>Allele Code，印记效应，遗传自父亲或母亲的等位基因表达情况不同。</li>
+			</ul>
+		</li>
+		<li>
+			<h2>表观遗传学的主要研究技术有哪些？</h2>
+			<ul>
+				<li>DNase Ⅰ-Seq</li>
+				<li>3C-Seq</li>
+				<li>ChIP-Seq</li>
+			</ul>
+			<dl>
+				<dt>Methyl-Seq</dt>
+				<dd>DNA的甲基化图谱</dd>
+				<dt>DNase I-Seq</dt>
+				<dd>全基因组染色质DNA的开放程度、非基因编码区的调控元件的分布</dd>
+				<dt>ChIP-Seq</dt>
+				<dd>重要转录因子以及组蛋白在染色质DNA上的结合、分布状态</dd>
+				<dt>3C-Seq</dt>
+				<dd>染色质的空间结构</dd>
+				<dt>mRNA-Seq</dt>
+				<dd>以细胞为单元的转录本、重要转录因子和信号转导分子的表达水平</dd>
+				<dt>ncRNA-Seq</dt>
+				<dd>非编码RNA的表达水平</dd>
+			</dl>
+		</li>
+	</ol>
 </body>
 </html>
