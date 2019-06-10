@@ -39,7 +39,25 @@
 		<dd>Others functional RNAs</dd>
 	</dl>
 	<h3>RNA-Seq protocol</h3>
-	<img src="20190521-1.png">
+	<img src="20190521-1.png"><br>
+	<img src="20190521-3.png">
+	<ol>
+		<li>
+			<p>文库准备</p>
+			<ol>
+				<li>Ribo-minus RNA-Seq</li>
+				<li>cDNA Library for RNA‐Seq</li>
+			</ol>
+		</li>
+		<li>测序</li>
+		<li>从测序仪得到原始的光信号</li>
+		<li>
+			<p>Base calling将光信号解读为序列文件</p>
+			<p>Fastq format file</p>
+			<p>Single end / Paired-end</p>
+		</li>
+		<li>Bioinformatics pipelines for transcriptomic analysis.（用于转录组学分析的生物信息学管道）</li>
+	</ol>
 	<p>常规RNA-Seq分析流程以及涉及的主要分析工具</p>
 	<h3>干细胞血液分化的系统组学研究</h3>
 	<p>血液细胞生理功能重要；谱系分化和发育阶段清晰；细胞来源丰富、临床病种繁多。</p>
@@ -68,21 +86,146 @@
 		</li>
 		<li>
 			<h3>lncRNA表达谱的分析方法</h3>
-			<em>编码潜能预测</em>
-
+			<h4>Ribo-minus优于polyA建库方法</h4>
+			<p>LncRNA、 mRNA-like RNA和snoRNA等一些非编码RNA不含有polyA</p>
+			<p>Ribo-minus建库方法下进行RNA-seq测序，分析得到未注释的转录本大多为lncRNA</p>
+			<h4>LncRNA数据处理</h4>
+			<img src="20190521-2.png">
+			<p><em>过滤转录本条件：</em></p>
+			<ol>
+				<li>转录本长度 ≥ 200 nt</li>
+				<li>转录本不曾被注释为mRNA、miRNA、rRNA等</li>
+			</ol>
+			<h4>编码潜能预测</h4>
+			<ul>
+				<li>CPAT</li>
+				<li>HMM/Pfam_Scan</li>
+				<li>CPC</li>
+				<li>PhyloCSF</li>
+				<li>BLASTX</li>
+			</ul>
+		</li>
+		<li>
+			<h3>LncRNA的相关数据库介绍</h3>
+		</li>
+		<li>
+			<h3>红系分化中RNA的整合分析</h3>
+			<h4>红系发育细胞分选策略</h4>
+			<h5>mRNA、miRNA和lncRNA表达量比较</h5>
+			<p>mRNA和miRNA表达量分布相似（A）</p>
+			<p>LncRNA表达量较低（B）</p>
+			<p>脱核的红细胞中也含有RNA</p>
+			<h5>mRNA、miRNA和lncRNA表达谱比较</h5>
+			<p>编码基因在红系发育初期（HSC-P2）和晚期（P5-RBC）的表达差异显著</p>
+			<em>非编码RNA表现出更强的分化阶段特异性</em>
+			<h5>LncRNA具有分化阶段特异性</h5>
+			<p>只在某一个分化阶段表达的lncRNA数目最多</p>
+			<em>LncRNA具有更强的分化阶段特异性</em>
+			<h5>编码基因表达趋势分析</h5>
+			<em>用ConsensusClusterPlus软件包对所有差异表达基因进行非监督K-means聚类</em>
+			<p>累积分布函数(CDF)（A）给出不同分类个数k下的一致性指数的累积概率</p>
+			<p>Delta面积图（B）展示k和k-1之间CDF曲线下的面积的相对变化</p>
+			<h5>miRNA-mRNA整合分析</h5>
+			<p>整合mirSystem数据库中miRNA和靶基因作用关系，并计算RNA表达量的皮尔森相关性，鉴定潜在的miRNA-gene作用对</p>
+			<p>4个miRNA与35个基因之间呈现强负相关关系<em>提示miRNA参与调控核苷酸结合以及DNA损伤应答</em></p>
+			<h5>LncRNA-mRNA整合分析</h5>
+			<em>LncRNA潜在调控了造血、 DNA修复相关基因的表达</em>
+			<h5>潜在的lncRNA顺式调控转录作用</h5>
+			<h5>Novel lncRNA的预测</h5>
+			<em>新的lncRNA与基因的表达呈现强相关</em>
+			<h5>ceRNA的预测</h5>
+			<p>miRNA和lncRNA存在内源性竞争关系。通过竞争结合在mRNA序列来干扰miRNA与靶基因结合的lncRNA称为ceRNA (competing endogenous RNA）</p>
+			<p>由于lncRNA和miRNA能够结合在同样的序列上，首先通过BLAST分析计算lncRNA和miRNA之间存在至少8个碱基的序列匹配，之后与DIANA数据库验证我们的结果，发现潜在的ceRNA</p>
+			<h5>红系发育中的RNA分子网络</h5>
+			<em>编码基因、 miRNA和lncRNA通过复杂的调控关系参与红细胞成熟过程</em>
+			<h4>LncRNA与转录因子/染色质复合物</h4>
+			<em>lncRNA作用机制多样，除了与蛋白质、 microRNA相互作用外，也可以招募或调控转录因子和染色质复合物</em>
+			<h5>LncRNA的动态表达谱</h5>
+			<h5>转录因子与核心基因的鉴定</h5>
+			<p>红系分化中相邻阶段差异peaks转录因子的富集</p>
+			<p>权重基因共表达网络中筛选到的阶段特异的核心基因</p>
+			<h5>LncRNA‐TFs‐Genes相互作用网络</h5>
+			<em>PCED1B-AS1 受CEBPB 和 GATA1转录因子调控可能参与调控 ALAS2 、 HBG2 、 RPA2等基因的表达</em>
 		</li>
 	</ul>
-	<h4>mRNA、miRNA和lncRNA表达谱比较</h4>
-	<p>lncRNA具有分化阶段特异性。</p>
-	<p>编码基因表达趋势分析</p>
-	<p>潜在的lncRNA顺势调控转录作用。</p>
-	<p>lncRNA的动态表达谱</p>
-	<h4>单细胞RNA-Seq</h4>
+	<h2>转录组测序技术的发展趋势</h2>
+	<dl>
+		<dt>Technology Advancement</dt>
+		<dd>Single cell RNA-Seq</dd>
+		<dt>Future Directions</dt>
+		<dd>Data integration</dd>
+		<dd>eQTL and GWAS</dd>
+		<dd>Transcriptomics & Genomics & Epigenomics & Proteomics</dd>
+	</dl>
+	<h3>单细胞RNA-Seq</h3>
+	<p>自闭症患者脑单细胞转录组测序研究</p>
+	<h3>后基因组时代的生物大数据集成</h3>
+	<h3>国际大型生命组学研究计划</h3>
+	<h3>基因表达的多维调控</h3>
+	<p>基因表达受到碱基水平、核酸分子水平、蛋白质水平等多维调控。疏松状态染色质中的DHS可以富集转录因子和重要酶类。染色质的开放程度与DHS的CpG岛甲基化及组蛋白修饰密切相关。转录因子通过结合DNA序列特定位点来改变启动子活性, 进而增强或抑制基因表达。染色质通过“成环”机制使得远距离的调控序列实现转录调控。SNPs通过改变基因的转录区、DHSs或调控区的DNA序列来改变转录因子的结合状态从而影响基因表达</p>
+	<h3>生物大数据的标准化与系统整合</h3>
+	<p>现有的组学数据主要包括：基因组（CNV、 SNPs、 QTLs），转录组（mRNA、microRNA、 LncRNA、 Gene fusion、 Alternative splicing）和表观组（DNS、Methylation、 Histone modification）</p>
+	<strong>对多组学多因子数据进行标准化，然后运用仿真和模拟等手段筛选最佳靶点</strong>
+	<h3>生物大数据的降维分析 (Dimension Reduction)</h3>
+	<p>对于TCGA中544个卵巢癌病人4种组学数据52129个属性，通过单变量Cox模型初步筛选出与生存时间相关的4526个变量。然后通过贝叶斯信息准则(BIC)和无监督的K聚类两种方法均获得7个亚型，横向得到37个clusters。然后，在这37个clusters里面的最显著的18个clusters中选出2个最具代表性的属性(一共36个属性)，分类效果也非常好，而且指标还原成了CNV、基因表达等等，最后确定了对应亚型特异的属性</p>
+	<h3>生物大数据的聚类与功能注释</h3>
+	<p>“聚类”是从大数据中发掘价值的普遍性、基础性问题。聚类分析的目标是依据数据本身的分布特征（无监督），把整个数据划分成不同的类。基本的准则是同类的数据应该具有某种相似性，而异类的数据应该具有某种差异性</p>
+	<ul>
+		<li>差异基因层次聚类 (Hierarchical Clustering)</li>
+		<li>基因本体聚类分析 (Gene Ontology)</li>
+		<li>信号通路富集与功能注释 (KEGG)</li>
+		<li>基于模糊聚类的Bayes网络</li>
+	</ul>
+	<h3>标准化的生物信息学分析软件和流程</h3>
+	<h3>整合分析多组学数据注释疾病相关位点</h3>
+	<h3>数据应用的不同层次</h3>
+	<ol>
+		<li>简单数据的简单分析：传统的数据库统计研究</li>
+		<li>简单数据的复杂分析：传统数据量的数据挖掘</li>
+		<li>复杂数据的简单分析</li>
+		<li>复杂数据的复杂分析</li>
+	</ol>
+	<p>基于价值发掘的数据应用集中第一、二阶段</p>
+	<p>下围棋的“AlphaGo”和下象棋的“DeepBlue”属于简单数据的复杂分析，是单一领域的机器学习</p>
+	<hr class="up">
 	<h1>课后作业和问题思考</h1>
 	<ol>
-		<li>请简述转录组测序的基本实验流程</li>
-		<li>请简述转录组数据分析的主要内容</li>
-		<li>表观遗传学在你工作中可能有哪些应用</li>
+		<li>
+			<h2>请简述转录组测序的基本实验流程</h2>
+			<img src="20190521-1.png"><br>
+			<img src="20190521-3.png">
+			<ol>
+				<li>
+					<p>文库准备</p>
+					<ol>
+						<li>Ribo-minus RNA-Seq</li>
+						<li>cDNA Library for RNA‐Seq</li>
+					</ol>
+				</li>
+				<li>测序</li>
+				<li>从测序仪得到原始的光信号</li>
+				<li>
+					<p>Base calling将光信号解读为序列文件</p>
+					<p>Fastq format file</p>
+					<p>Single end / Paired-end</p>
+				</li>
+				<li>Bioinformatics pipelines for transcriptomic analysis.（用于转录组学分析的生物信息学管道）</li>
+			</ol>
+			<p>常规RNA-Seq分析流程以及涉及的主要分析工具</p>		
+		</li>
+		<li>
+			<h2>请简述转录组数据分析的主要内容</h2>
+			<ol>
+				<li>Alignment 序列比对</li>
+				<li>Quantification 定量</li>
+				<li>Differential expression 差异表达</li>
+				<li>Functional annotation 功能注释</li>
+				<li>Network construction 网络构建</li>
+			</ol>
+		</li>
+		<li>
+			<h2>表观遗传学在你工作中可能有哪些应用</h2>
+		</li>
 	</ol>
 </body>
 </html>
